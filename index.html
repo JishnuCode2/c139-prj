@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Poster</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+
+    <script src="js/Poster.js"></script>
+    <script src="js/Cursor_Events.js"></script>
+  </head>
+  <body>
+       <a-scene id="main-scene">
+        
+        <a-sky id="main-container" color="#abc0ff"></a-sky>
+
+        <!--CAMERA-->
+        <a-camera id="camera" wasd-controls= "enabled:false;">
+
+          <!--App Title-->
+          <a-entity id="app-title" position="0 0.73 -1" 
+          text="font:exo2bold; align:centre; width:2.5; color:#000000; value: Virtual Comics Store!">
+          
+          <!--Subtitle--> 
+            <a-entity
+              id="app-subtitle"
+              position="0 -0.1 0"
+              text = "font:dejavu; align:centre ; width:1 ; color:#e61500 ; value: Get your favourite comics;"
+            ></a-entity>
+          </a-entity>
+
+          
+          <a-entity id="camera-cursor" cursor position="0 0 -2.5" 
+            geometry="primitive: ring; radiusInner: 0.04; radiusOuter: 0.06"
+            material="color: #000; shader: flat">
+          </a-entity>
+          
+          <a-entity
+          id="fadeBackground"
+          geometry="primitive: box; width: 60 ; height:60, depth: 0.1"
+          material="color: black; side: back; shader: flat; transparent: true; opacity: 0.8" 
+          position="0 0 -1"
+          visible="false"></a-entity>
+
+
+        </a-camera>
+
+        <!--Cursor-->
+        <a-entity id="posters-container" poster></a-entity>        
+
+       </a-scene>
+  </body>
+</html>
